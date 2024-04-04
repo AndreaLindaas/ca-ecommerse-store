@@ -12,6 +12,9 @@ export default function Navbar() {
         <Link href="./cart">
           <li>Cart</li>
         </Link>
+        <Link href="./contact-page">
+          <li>Contact Us</li>
+        </Link>
       </ul>
     </nav>
   );
