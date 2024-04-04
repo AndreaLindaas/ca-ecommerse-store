@@ -20,19 +20,26 @@ export default function ListingProducts() {
       <h2>Products</h2>
 
       {products.map((product: Product) => (
-        <Link href={`/product-page/${product.id}`} key={product.id}>
-          <div>
-            <Image
-              alt={product.title}
-              src={product.imageUrl}
-              width={500}
-              height={500}
-            />
+        <>
+          <Link href={`/product-page/${product.id}`} key={product.id}>
+            <div className="card w-96 bg-base-100 shadow-xl">
+              <figure className="px-10 pt-10">
+                <img
+                  src={product.imageUrl}
+                  alt="Shoes"
+                  className="rounded-xl"
+                />
+              </figure>
+              <div className="card-body items-center text-center">
+                <h2 className="card-title">{product.title}</h2>
 
-            <h3>{product.title}</h3>
-            <p>Price: {product.price}</p>
-          </div>
-        </Link>
+                <div className="card-actions">
+                  <button className="btn btn-primary">See</button>
+                </div>
+              </div>
+            </div>
+          </Link>
+        </>
       ))}
     </div>
   );

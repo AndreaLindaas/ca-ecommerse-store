@@ -23,18 +23,34 @@ export default function ProductPage(props: any) {
   console.log("denne", product);
 
   return (
-    <div>
+    <div className="container m-auto  ">
       {product && (
-        <div key={product.id}>
-          <h3>{product.title}</h3>
-          <Image
-            alt="Image of product"
-            src={product.imageUrl}
-            width={500}
-            height={500}
-          />
-          <p>Price: {product.price}</p>
+        <div className="card lg:card-side bg-base-100 shadow-xl  max-w-3xl  ">
+          <figure>
+            <img src={product.imageUrl} alt="Album" />
+          </figure>
+          <div className="card-body">
+            <h2 className="card-title">{product.title}</h2>
+            <p>{product.description}</p>
+            <h3 font-bold>Price: {product.price}</h3>
+            <div className="card-actions justify-end">
+              <button className="btn btn-primary">Add to cart</button>
+            </div>
+          </div>
         </div>
+
+        //
+        // <div key={product.id}>
+        //   <h3>{product.title}</h3>
+        //   <Image
+        //     alt="Image of product"
+        //     src={product.imageUrl}
+        //     width={500}
+        //     height={500}
+        //   />
+
+        //   <p>Price: {product.price}</p>
+        // </div>
       )}
     </div>
   );
