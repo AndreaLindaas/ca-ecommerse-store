@@ -21,7 +21,6 @@ export default function ListingProducts() {
 
       {products.map((product: Product) => (
         <Link href={`/product-page/${product.id}`} key={product.id}>
-          {/* ${product.id} */}
           <div>
             <Image
               alt={product.title}
