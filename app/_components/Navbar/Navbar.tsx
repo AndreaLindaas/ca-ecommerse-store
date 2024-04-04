@@ -6,12 +6,10 @@ export default function Navbar() {
     <nav>
       <ul>
         <Link href="/">
-          {" "}
           <li>Home</li>
         </Link>
 
         <Link href="./cart">
-          {" "}
           <li>Cart</li>
         </Link>
       </ul>
