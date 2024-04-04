@@ -1,13 +1,12 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import { Product } from "@/app/_types/types";
-import Image from "next/image";
+import { CartProduct, Product } from "@/app/_types/types";
+import { useCartStore } from "@/app/cartStore";
+
 export default function ProductPage(props: any) {
   const [product, setProduct] = useState<Product | null>(null);
-
-  console.log(props);
-  console.log(props.params.productId);
+  const { products, addProduct } = useCartStore();
 
   useEffect(() => {
     fetch(`https://api.noroff.dev/api/v1/online-shop/${props.params.productId}`)
@@ -20,7 +19,11 @@ export default function ProductPage(props: any) {
       });
   }, [props.params.productId]);
 
-  console.log("denne", product);
+  const addProductToCart = () => {
+    if (product) {
+      addProduct(product);
+    }
+  };
 
   return (
     <div className="container m-auto  ">
@@ -34,7 +37,9 @@ export default function ProductPage(props: any) {
             <p>{product.description}</p>
             <h3 font-bold>Price: {product.price}</h3>
             <div className="card-actions justify-end">
-              <button className="btn btn-primary">Add to cart</button>
+              <button className="btn btn-primary" onClick={addProductToCart}>
+                Add to cart
+              </button>
             </div>
           </div>
         </div>
