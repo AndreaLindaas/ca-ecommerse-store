@@ -21,4 +21,5 @@ export type Review = {
 export type CartStore = {
     products:Product[],
     addProduct: (product:Product)=>void
+    removeProduct: (product:Product)=>void
 }
