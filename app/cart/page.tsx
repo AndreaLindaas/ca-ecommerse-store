@@ -74,7 +74,12 @@ export default function Cart() {
   return (
     <div>
       {renderCart()}
-      <div className="font-bold">Total Amount: {totalAmount.toFixed(2)}</div>
+
+      {products.length > 0 && (
+        <div className="font-bold">Total Amount: {totalAmount.toFixed(2)}</div>
+      )}
+
+      {products.length == 0 && <div>The cart is emty</div>}
     </div>
   );
 }
