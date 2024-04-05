@@ -2,9 +2,10 @@
 import React, { useState } from "react";
 import { useCartStore } from "../cartStore";
 import { Product } from "../_types/types";
+import Link from "next/link";
 
 export default function Cart() {
-  const { products, addProduct, removeProduct } = useCartStore();
+  const { products, addProduct, removeProduct, clearCart } = useCartStore();
   let totalAmount = 0;
 
   const renderCart = () => {
@@ -76,10 +77,27 @@ export default function Cart() {
       {renderCart()}
 
       {products.length > 0 && (
-        <div className="font-bold">Total Amount: {totalAmount.toFixed(2)}</div>
+        <div>
+          {" "}
+          <div className="font-bold">
+            Total Amount: {totalAmount.toFixed(2)}
+          </div>
+          <button className="btn" onClick={() => clearCart()}>
+            Clear Cart
+          </button>
+        </div>
       )}
 
-      {products.length == 0 && <div>The cart is emty</div>}
+      {products.length == 0 && (
+        <div>
+          <h2 className="emtyCart text-center">The cart is empty</h2>
+          <div className=" text-center">
+            <Link href={"/"}>
+              <button className="btn btn-info ">Shop now</button>
+            </Link>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
