@@ -22,7 +22,24 @@ export const useCartStore = create<CartStore>()((set)=>({
             products: newProducts
         }
     });
-    }
+    },
+   removeProduct: (product:Product)=>{
+    set((state)=>{
+        let newProducts = [] as Product[];
+
+        if(product.quantity > 1){
+            product.quantity=product.quantity - 1;
+            newProducts = state.products.map((i)=>(i.id === product.id ? product : i));
+
+        }else{
+            newProducts= state.products.filter((i)=> i.id !== product.id)
+        }
+
+        return {
+            products: newProducts
+        }
+    })
+   }
 }))
 
 
