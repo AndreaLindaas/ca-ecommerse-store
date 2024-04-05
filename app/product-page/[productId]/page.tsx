@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import { CartProduct, Product } from "@/app/_types/types";
+import { Product } from "@/app/_types/types";
 import { useCartStore } from "@/app/cartStore";
 
 export default function ProductPage(props: any) {
