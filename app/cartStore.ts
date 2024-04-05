@@ -3,6 +3,7 @@ import {  CartStore, Product } from "./_types/types"
 
 export const useCartStore = create<CartStore>()((set)=>({
     products:[],
+    
     addProduct: (product:Product)=> 
     { set((state) => { 
         let newProducts = [];
@@ -39,7 +40,8 @@ export const useCartStore = create<CartStore>()((set)=>({
             products: newProducts
         }
     })
-   }
+   },
+   clearCart: ()=> set({products:[]})
 }))
 
 
