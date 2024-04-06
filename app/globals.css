@@ -5,3 +5,19 @@
 h2.emtyCart {
   font-size: 40px;
 }
+.priceDiscount {
+  text-decoration: line-through;
+}
+
+.cart-row {
+  display: grid;
+  grid-template-columns: 250px 138px 100px auto;
+}
+
+.center {
+  text-align: center;
+}
+
+.right {
+  text-align: right;
+}
