@@ -16,11 +16,11 @@ export default function ListingProducts() {
   }, []);
   return (
     <div>
-      <h2>Products</h2>
+      <h1 className="size">Products</h1>
       <div className="products-list">
         {products.map((product: Product) => (
           <Link href={`/product-page/${product.id}`} key={product.id}>
-            <div className="card w-96 bg-base-100 shadow-xl">
+            <div className="card w-full md:w-96 bg-base-100 shadow-xl">
               <figure className="px-10 pt-10">
                 <img
                   src={product.imageUrl}
