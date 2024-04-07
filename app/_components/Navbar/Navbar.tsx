@@ -23,12 +23,10 @@ export default function Navbar() {
         </li>
 
         <li>
-          {" "}
           <Link href="/cart">Cart ({calculateItemsInStore()})</Link>
         </li>
 
         <li>
-          {" "}
           <Link href="/contact-page">Contact Us</Link>
         </li>
       </ul>
