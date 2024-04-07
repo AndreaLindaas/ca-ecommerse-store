@@ -34,19 +34,17 @@ export default function Cart() {
                         </div>
                       </div>
                       <div>
-                        <div className="font-bold">{product.title}</div>
+                        <div className="">{product.title}</div>
                       </div>
                     </div>
                   </td>
                   {product.discountedPrice < product.price ? (
                     <td className="center">
-                      <div>
-                        <td className="priceDiscount ">{product.price} kr</td>
-                      </div>
-                      <td className=" text-green-700">
+                      <div className="priceDiscount ">{product.price} kr</div>
+                      <div className=" text-green-700">
                         {product.discountedPrice} kr
                         <br />
-                      </td>
+                      </div>
                     </td>
                   ) : (
                     <td className="center">
@@ -91,9 +89,7 @@ export default function Cart() {
 
       {products.length > 0 && (
         <div>
-          <div className="font-bold right">
-            Total: {totalAmount.toFixed(2)},-
-          </div>
+          <div className=" right">Total: {totalAmount.toFixed(2)},-</div>
           <button
             className="btn btn-outline btn-error btn-xs"
             onClick={() => clearCart()}

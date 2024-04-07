@@ -24,6 +24,8 @@ export default function ProductPage(props: any) {
     setAddedToCart(true);
     if (product) {
       addProduct(product);
+
+      console.log("products in cart: ", product);
     }
   };
 
@@ -40,13 +42,13 @@ export default function ProductPage(props: any) {
 
             {product.discountedPrice < product.price ? (
               <div>
-                <div font-bold>
+                <div>
                   Price: <span className="priceDiscount">{product.price}</span>
                 </div>{" "}
-                <h3 font-bold>Sale: {product.discountedPrice}</h3>{" "}
+                <h3>Sale: {product.discountedPrice}</h3>{" "}
               </div>
             ) : (
-              <h3 font-bold>Price: {product.price}</h3>
+              <h3>Price: {product.price}</h3>
             )}
 
             <div className="card-actions justify-end">
