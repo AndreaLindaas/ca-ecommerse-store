@@ -21,3 +21,15 @@ h2.emtyCart {
 .right {
   text-align: right;
 }
+
+.products-list {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+
+  > a {
+    > div {
+      height: 592px;
+    }
+  }
+}
