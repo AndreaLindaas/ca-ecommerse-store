@@ -2,6 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+main {
+  margin-bottom: 100px;
+}
 h2.emtyCart {
   font-size: 40px;
 }
@@ -32,4 +35,8 @@ h2.emtyCart {
       height: 592px;
     }
   }
+}
+.size {
+  font-size: revert;
+  text-align: center;
 }

@@ -69,7 +69,8 @@ export default function Cart() {
                     </label>
                   </td>
                   <td className="right">
-                    <strong>Total:</strong> {itemTotal.toFixed(2)},-
+                    <span className="font-bold">Total:</span>{" "}
+                    {itemTotal.toFixed(2)},-
                   </td>
                 </tr>
               </tbody>
@@ -87,17 +88,29 @@ export default function Cart() {
 
       {products.length > 0 && (
         <div>
-          <div className=" right">Total: {totalAmount.toFixed(2)},-</div>
+          <div className=" right font-bold mx-5 ">
+            Total: {totalAmount.toFixed(2)},-
+          </div>
           <button
-            className="btn btn-outline btn-error btn-xs"
+            className="btn btn-outline btn-error btn-xs m-2.5"
             onClick={() => clearCart()}
           >
             Clear Cart
           </button>
-          <Link href={"/"}>
-            <button className="btn btn-info ">Shop more</button>
-          </Link>
-          <button className="btn btn-success">Checkout</button>
+
+          <div className="text-center m-20">
+            <Link href={"/"}>
+              <button className="btn btn-info m-2.5">Shop more</button>
+            </Link>
+            <Link href={"/checkout"}>
+              <button
+                className="btn btn-success m-2.5"
+                onClick={() => clearCart()}
+              >
+                Checkout
+              </button>
+            </Link>
+          </div>
         </div>
       )}
 
