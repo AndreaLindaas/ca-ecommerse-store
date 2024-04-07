@@ -14,7 +14,6 @@ export default function ListingProducts() {
       })
       .catch((error) => {});
   }, []);
-  console.log(products);
   return (
     <div>
       <h2>Products</h2>

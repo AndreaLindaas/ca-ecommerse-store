@@ -1,3 +1,4 @@
+"use client"
 import {create} from "zustand"
 import {  CartStore, Product } from "./_types/types"
 

@@ -9,8 +9,6 @@ export default function Cart() {
   let totalAmount = 0;
 
   const renderCart = () => {
-    console.log("products", products);
-
     return products.map((product: Product) => {
       const itemTotal =
         product.discountedPrice < product.price
