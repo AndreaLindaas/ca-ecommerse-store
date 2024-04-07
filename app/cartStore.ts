@@ -8,7 +8,6 @@ export const useCartStore = create<CartStore>()((set)=>({
     addProduct: (product:Product)=> 
     { set((state) => { 
         let newProducts = [];
-
         const foundProduct = state.products.find((p:Product) => p.id === product.id);
   
         // If the product is already in the cart we want to increase the quantity
@@ -42,7 +41,14 @@ export const useCartStore = create<CartStore>()((set)=>({
         }
     })
    },
-   clearCart: ()=> set({products:[]})
+   clearCart: ()=> {
+    set(()=>{
+        console.log("clearing cart")
+        return {
+            products: []
+        }
+    })
+   }
 }))
 
 
