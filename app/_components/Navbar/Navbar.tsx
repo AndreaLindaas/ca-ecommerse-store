@@ -18,15 +18,19 @@ export default function Navbar() {
   return (
     <nav>
       <ul>
-        <Link href="/">
-          <li>Home</li>
-        </Link>
-        <Link href="/cart">
-          <li>Cart ({calculateItemsInStore()})</li>
-        </Link>
-        <Link href="/contact-page">
-          <li>Contact Us</li>
-        </Link>
+        <li>
+          <Link href="/">Home</Link>
+        </li>
+
+        <li>
+          {" "}
+          <Link href="/cart">Cart ({calculateItemsInStore()})</Link>
+        </li>
+
+        <li>
+          {" "}
+          <Link href="/contact-page">Contact Us</Link>
+        </li>
       </ul>
     </nav>
   );
