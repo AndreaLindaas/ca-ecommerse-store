@@ -115,7 +115,7 @@ export default function Cart() {
       )}
 
       {products.length == 0 && (
-        <div>
+        <div className="">
           <h2 className="emtyCart text-center">The cart is empty</h2>
           <div className=" text-center">
             <Link href={"/"}>
