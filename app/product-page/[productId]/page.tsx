@@ -33,7 +33,11 @@ export default function ProductPage(props: any) {
   const showReviews = () => {
     return product?.reviews.map((review: Review) => {
       return (
-        <div key={review.id} className="card w-96 bg-base-100 shadow-xl my-11">
+        // <div key={review.id} className="card w-96 bg-base-100 shadow-xl my-11">
+        <div
+          key={review.id}
+          className="card w-full sm:w-96 bg-base-100 shadow-xl my-11 p-4"
+        >
           <div className="font-bold ">{review.username}</div>{" "}
           <div className="font-bold ">{review.rating} / 5</div>
           <div>{review.description}</div>
