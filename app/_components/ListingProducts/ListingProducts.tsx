@@ -15,9 +15,9 @@ export default function ListingProducts() {
       .catch((error) => {});
   }, []);
   return (
-    <div>
+    <div className="wtf">
       <h1 className="size">Products</h1>
-      <div className="products-list">
+      <div className="products-list pt-8">
         {products.map((product: Product) => (
           <Link href={`/product-page/${product.id}`} key={product.id}>
             <div className="card w-full md:w-96 bg-base-100 shadow-xl">
