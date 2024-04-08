@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import { Product } from "@/app/_types/types";
+import { Product, Review } from "@/app/_types/types";
 import { useCartStore } from "@/app/cartStore";
 
 export default function ProductPage(props: any) {
@@ -28,9 +28,22 @@ export default function ProductPage(props: any) {
       console.log("products in cart: ", product);
     }
   };
+  console.log(product);
+
+  const showReviews = () => {
+    return product?.reviews.map((review: Review) => {
+      return (
+        <div key={review.id} className="card w-96 bg-base-100 shadow-xl my-11">
+          <div className="font-bold ">{review.username}</div>{" "}
+          <div className="font-bold ">{review.rating} / 5</div>
+          <div>{review.description}</div>
+        </div>
+      );
+    });
+  };
 
   return (
-    <div className="container m-auto  ">
+    <div className="container m-auto">
       {product && (
         <div className="card lg:card-side bg-base-100 shadow-xl  max-w-3xl  ">
           <figure>
@@ -60,6 +73,8 @@ export default function ProductPage(props: any) {
           </div>
         </div>
       )}
+      <h2 className="size m-10">Reviews</h2>
+      {showReviews()}
     </div>
   );
 }
