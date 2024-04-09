@@ -8,6 +8,7 @@ export type Product = {
     title: string,
     tags: string[],
     reviews: Review[]
+    quantity: number;
 }
 
 export type Review = {
@@ -15,4 +16,11 @@ export type Review = {
     id:string,
     rating:number,
     username:string
+}
+
+export type CartStore = {
+    products:Product[],
+    addProduct: (product:Product)=>void,
+    removeProduct: (product:Product)=>void,
+    clearCart: ()=>void
 }
